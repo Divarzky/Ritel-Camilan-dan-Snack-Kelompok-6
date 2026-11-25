@@ -149,3 +149,4 @@ Karena website ini terdiri dari HTML, CSS, dan JavaScript statis tanpa proses bu
 - **Catatan Endpoint Formspree:** `js/main.js` mengirim request ke `https://formspree.io/f/mqpqnloy`, sedangkan atribut HTML fallback `action` pada `<form id="form-kontak">` di `kontak.html` masih tercatat `https://formspree.io/f/xeagnzdd` (saat JavaScript aktif, request selalu menggunakan endpoint di `js/main.js`).
 - **Dokumen Rincian:** Untuk rincian log perubahan dari Tugas 1 ke Tugas 2 dan matriks pengujian, lihat [Data.md](Data.md).
 
+
