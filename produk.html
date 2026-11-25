@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Katalog Produk Camilan Nusantara - Aneka pilihan basreng pedas daun jeruk, keripik kaca, makaroni, usus crispy, dan keripik tempe berkualitas higienis.">
+  <meta name="author" content="Aswin Akmal Rizantha (25104410058)">
+  <title>Katalog Produk - Camilan Nusantara | Makanan Ringan Kemasan</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Camilan Nusantara</h1>
+    <p>Ritel Camilan &amp; Makanan Ringan Kemasan Berkualitas</p>
+  </header>
+
+  <!-- NAVIGASI RESPONSIF -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo-nav">Camilan Nusantara</a>
+      <button type="button" id="tombol-menu" class="tombol-menu" aria-label="Menu" aria-expanded="false" aria-controls="daftar-menu">&#9776;</button>
+      <ul id="daftar-menu" class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="produk.html">Katalog Produk</a></li>
+        <li><a href="artikel.html">Artikel Edukasi</a></li>
+        <li><a href="kontak.html">Kontak &amp; Layanan</a></li>
+        <li><a href="biodata.html">Biodata Tim</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- KONTEN UTAMA -->
+  <main>
+
+    <!-- SECTION 1: GALERI PRODUK TERPOPULER (FOKUS UTAMA) -->
+    <section id="katalog-produk">
+      <h2>Katalog &amp; Galeri Produk Terpopuler</h2>
+      <p>
+        Pilih camilan kemasan kedap udara favorit Anda di bawah ini, lalu lanjutkan ke panel keranjang untuk memesan langsung melalui WhatsApp resmi <strong>Camilan Nusantara</strong>.
+      </p>
+
+      <div class="grid-kartu">
+        <div class="kartu-produk">
+          <img src="upload/gambar/basreng.jpg" alt="Kemasan Basreng Daun Jeruk renyah Camilan Nusantara">
+          <h3>Basreng Daun Jeruk</h3>
+          <p>Bakso goreng ikan tenggiri renyah berbumbu cabai kering dan daun jeruk segar.</p>
+          <p class="harga">Mulai Rp 8.000</p>
+          <label for="varian-basreng">Pilih Kemasan:</label>
+          <select id="varian-basreng" class="pilih-varian">
+            <option value="CN-BS01">Pouch 100g - Rp 8.000</option>
+            <option value="CN-BS02">Zipper 250g - Rp 18.000</option>
+          </select>
+          <button type="button" class="btn btn-kecil btn-tambah-kartu" data-select="varian-basreng">+ Tambah ke Pesanan</button>
+        </div>
+
+        <div class="kartu-produk">
+          <img src="upload/gambar/kripikkaca.jpg" alt="Kemasan Keripik Kaca Pedas renyah Camilan Nusantara">
+          <h3>Keripik Kaca Pedas</h3>
+          <p>Olahan tapioka tipis bertekstur kaca super garing dengan bumbu pedas mantap.</p>
+          <p class="harga">Mulai Rp 7.500</p>
+          <label for="varian-kaca">Pilih Kemasan:</label>
+          <select id="varian-kaca" class="pilih-varian">
+            <option value="CN-KK01">Pouch 100g - Rp 7.500</option>
+            <option value="CN-KK02">Zipper 250g - Rp 16.500</option>
+          </select>
+          <button type="button" class="btn btn-kecil btn-tambah-kartu" data-select="varian-kaca">+ Tambah ke Pesanan</button>
+        </div>
+
+        <div class="kartu-produk">
+          <img src="upload/gambar/makaronipedas.jpg" loading="lazy" alt="Kemasan Makaroni Pedas Gurih renyah Camilan Nusantara">
+          <h3>Makaroni Pedas Gurih</h3>
+          <p>Makaroni renyah berbumbu rempah daun jeruk, gurih dan tidak keras di lidah.</p>
+          <p class="harga">Rp 14.000 / 250g</p>
+          <button type="button" class="btn btn-kecil btn-tambah" data-kode="CN-MK01">+ Tambah ke Pesanan</button>
+        </div>
+      </div>
+
+      <p class="cta-pusat">
+        <a href="#keranjang-pesanan" class="btn btn-wa">Buka Keranjang &amp; Checkout</a>
+      </p>
+    </section>
+
+    <!-- SECTION 2: KERANJANG & PEMESANAN WHATSAPP (RINGKAS & DAPAT DIBUKA-TUTUP) -->
+    <section id="keranjang-pesanan">
+      <details id="panel-keranjang" class="panel-ringkas" open>
+        <summary class="summary-keranjang">
+          <span>Keranjang &amp; Pemesanan WhatsApp</span>
+          <span class="ringkasan-kanan">
+            <span id="badge-keranjang" class="badge-keranjang">0 item</span>
+            <strong id="ringkasan-total-header" class="total-header">Rp0</strong>
+          </span>
+        </summary>
+
+        <div class="isi-panel">
+          <p>
+            Periksa daftar camilan pilihan Anda, lalu lengkapi alamat pengiriman untuk mengirim pesanan ke WhatsApp resmi <strong>0858-0058-9235</strong>.
+          </p>
+
+          <!-- TAMPILAN SAAT KERANJANG KOSONG -->
+          <div id="keranjang-kosong" class="keranjang-kosong">
+            <p><strong>Keranjang pesanan Anda masih kosong.</strong></p>
+            <p>Silakan pilih produk dan tekan tombol <em>+ Tambah ke Pesanan</em> atau <em>+ Pesan</em> pada daftar harga.</p>
+          </div>
+
+          <!-- DAFTAR ITEM PESANAN (DIRENDER AMAN VIA JAVASCRIPT) -->
+          <div id="wadah-keranjang" class="daftar-keranjang" hidden></div>
+
+          <!-- RINGKASAN TOTAL PESANAN -->
+          <div id="kotak-total" class="kotak-total" hidden>
+            <div>
+              <p>Total Item: <strong id="total-item">0</strong> pcs</p>
+              <p>Total Pesanan: <span id="total-harga" class="nominal-total">Rp0</span></p>
+            </div>
+            <button type="button" id="btn-kosongkan" class="btn-sekunder btn-kecil">Kosongkan Keranjang</button>
+          </div>
+
+          <!-- FORM DATA PELANGGAN UNTUK CHECKOUT WHATSAPP -->
+          <form id="form-checkout-wa" action="#" method="post" novalidate>
+            <fieldset>
+              <legend>Data Pengiriman Pelanggan</legend>
+
+              <p>
+                <label for="wa-nama">Nama Lengkap Pelanggan <span class="wajib">*</span></label>
+                <input type="text" id="wa-nama" name="wa_nama" placeholder="Contoh: Siti Aminah" required>
+                <span class="error-inline" id="err-wa-nama"></span>
+              </p>
+
+              <p>
+                <label for="wa-telepon">Nomor Telepon / WhatsApp <span class="wajib">*</span></label>
+                <input type="tel" id="wa-telepon" name="wa_telepon" placeholder="Contoh: 085800589235" required>
+                <span class="error-inline" id="err-wa-telepon"></span>
+              </p>
+
+              <p>
+                <label for="wa-alamat">Alamat Lengkap Pengiriman <span class="wajib">*</span></label>
+                <textarea id="wa-alamat" name="wa_alamat" rows="3" placeholder="Tuliskan jalan, nomor rumah, RT/RW, kelurahan, kecamatan, dan kota..." required></textarea>
+                <span class="error-inline" id="err-wa-alamat"></span>
+              </p>
+
+              <p>
+                <label for="wa-catatan">Catatan Tambahan (Opsional)</label>
+                <textarea id="wa-catatan" name="wa_catatan" rows="2" placeholder="Contoh: Level pedas sedang, kirim sore hari, atau kemasan hampers"></textarea>
+              </p>
+            </fieldset>
+
+            <p class="catatan-wa">
+              <strong>Catatan Pemesanan:</strong> Aplikasi WhatsApp akan terbuka dengan rincian pesanan otomatis. Pastikan Anda menekan tombol <strong>Kirim (Send)</strong> di WhatsApp agar pesanan diteruskan ke admin kami.
+            </p>
+
+            <p id="status-checkout" class="status-form" hidden></p>
+
+            <!-- PANEL KONFIRMASI SETELAH PELANGGAN KEMBALI DARI WHATSAPP -->
+            <div id="konfirmasi-wa" class="konfirmasi-wa" hidden>
+              <p><strong>Apakah pesanan sudah berhasil dikirim melalui WhatsApp?</strong></p>
+              <div class="grup-tombol">
+                <button type="button" id="btn-wa-sukses" class="btn-wa btn-kecil">Ya, Sudah Terkirim</button>
+                <button type="button" id="btn-wa-batal" class="btn-sekunder btn-kecil">Belum / Batal</button>
+              </div>
+            </div>
+
+            <div class="grup-tombol">
+              <button type="submit" id="btn-checkout-wa" class="btn-wa">Pesan via WhatsApp</button>
+            </div>
+          </form>
+        </div>
+      </details>
+    </section>
+
+    <!-- SECTION 3: DAFTAR HARGA & KOMPARASI KEMASAN (RINGKAS DENGAN PROGRESSIVE DISCLOSURE) -->
+    <section id="daftar-harga">
+      <h2>Daftar Harga &amp; Komparasi Kemasan</h2>
+      <p>
+        Lihat seluruh 7 varian camilan beserta perbandingan harga eceran, grosir reseller (min. 10 pcs), dan masa simpan melalui panel berikut:
+      </p>
+
+      <details class="panel-ringkas" open>
+        <summary>Lihat Tabel Harga Lengkap &amp; Cari Produk (7 Varian)</summary>
+        <div class="isi-panel">
+          <div class="kotak-cari">
+            <label for="input-cari">Cari Produk Camilan:</label>
+            <input type="text" id="input-cari" aria-label="Cari nama camilan, kemasan, atau kode produk" placeholder="Ketik nama camilan, kemasan, atau kode...">
+          </div>
+
+          <div class="tabel-wadah">
+            <table id="tabel-produk">
+              <thead>
+                <tr>
+                  <th>Kode</th>
+                  <th>Nama Varian Camilan</th>
+                  <th>Kemasan</th>
+                  <th>Harga Eceran</th>
+                  <th>Harga Grosir (Min 10)</th>
+                  <th>Masa Simpan</th>
+                  <th>Pesan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CN-BS01</td>
+                  <td>Basreng Daun Jeruk</td>
+                  <td>Pouch 100g</td>
+                  <td>Rp 8.000</td>
+                  <td>Rp 6.500</td>
+                  <td>6 Bulan</td>
+                  <td><button type="button" class="btn btn-kecil btn-tambah" data-kode="CN-BS01">+ Pesan</button></td>
+                </tr>
+                <tr>
+                  <td>CN-BS02</td>
+                  <td>Basreng Daun Jeruk</td>
+                  <td>Zipper 250g</td>
+                  <td>Rp 18.000</td>
+                  <td>Rp 15.000</td>
+                  <td>8 Bulan</td>
+                  <td><button type="button" class="btn btn-kecil btn-tambah" data-kode="CN-BS02">+ Pesan</button></td>
+                </tr>
+                <tr>
+                  <td>CN-KK01</td>
+                  <td>Keripik Kaca Pedas</td>
+                  <td>Pouch 100g</td>
+                  <td>Rp 7.500</td>
+                  <td>Rp 6.000</td>
+                  <td>6 Bulan</td>
+                  <td><button type="button" class="btn btn-kecil btn-tambah" data-kode="CN-KK01">+ Pesan</button></td>
+                </tr>
+                <tr>
+                  <td>CN-KK02</td>
+                  <td>Keripik Kaca Pedas</td>
+                  <td>Zipper 250g</td>
+                  <td>Rp 16.500</td>
+                  <td>Rp 13.500</td>
+                  <td>8 Bulan</td>
+                  <td><button type="button" class="btn btn-kecil btn-tambah" data-kode="CN-KK02">+ Pesan</button></td>
+                </tr>
+                <tr>
+                  <td>CN-MK01</td>
+                  <td>Makaroni Pedas Daun Jeruk</td>
+                  <td>Zipper 250g</td>
+                  <td>Rp 14.000</td>
+                  <td>Rp 11.500</td>
+                  <td>9 Bulan</td>
+                  <td><button type="button" class="btn btn-kecil btn-tambah" data-kode="CN-MK01">+ Pesan</button></td>
+                </tr>
+                <tr>
+                  <td>CN-US01</td>
+                  <td>Usus Crispy Gurih</td>
+                  <td>Pouch 150g</td>
+                  <td>Rp 15.000</td>
+                  <td>Rp 12.000</td>
+                  <td>6 Bulan</td>
+                  <td><button type="button" class="btn btn-kecil btn-tambah" data-kode="CN-US01">+ Pesan</button></td>
+                </tr>
+                <tr>
+                  <td>CN-SB01</td>
+                  <td>Kerupuk Seblak Kering</td>
+                  <td>Pouch 120g</td>
+                  <td>Rp 10.000</td>
+                  <td>Rp 8.500</td>
+                  <td>6 Bulan</td>
+                  <td><button type="button" class="btn btn-kecil btn-tambah" data-kode="CN-SB01">+ Pesan</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p id="pesan-kosong" class="pesan-kosong" hidden>Varian camilan tidak ditemukan.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- SECTION 4: INFORMASI LENGKAP KATEGORI, ALUR & SPESIFIKASI MUTU -->
+    <section>
+      <h2>Informasi Produk, Alur Pemesanan &amp; Standar Mutu</h2>
+      <p>
+        Pelajari rincian kategori produk, alur belanja eceran/grosir, serta jaminan legalitas P-IRT &amp; Halal pada panel ringkas berikut:
+      </p>
+
+      <details>
+        <summary>Daftar 6 Kategori Produk Unggulan</summary>
+        <ul>
+          <li><strong>Basreng Daun Jeruk (Signature Dish):</strong> Bakso goreng berbahan ikan tenggiri segar yang diiris presisi, digoreng kering tanpa menyerap minyak berlebih, lalu dibalut bumbu cabai rawit kering berpadu aroma daun jeruk purut pilihan.</li>
+          <li><strong>Keripik Kaca Ekstra Pedas (Keripik Beling):</strong> Olahan tepung tapioka murni yang digiling ekstra tipis dan dipanggang hingga menghasilkan tekstur transparan renyah dengan sensasi cabai rawit merah.</li>
+          <li><strong>Makaroni Pedas Renyah &amp; Gurih:</strong> Makaroni spiral dan pipa yang dimasak bantet renyah (tidak keras) dengan bumbu keju gurih atau cabai level berjenjang.</li>
+          <li><strong>Kerupuk Seblak Kering Pedas:</strong> Kerupuk bawang bantet berbumbu seblak khas kencur dan cabai merah yang gurih dan beraroma rempah tradisional.</li>
+          <li><strong>Usus Crispy Bumbu Rempah:</strong> Usus ayam higienis yang dicelup adonan tepung berbumbu bawang ketumbar, lalu digoreng garing keemasan bebas aroma amis.</li>
+          <li><strong>Keripik Tempe Sagu Oven Gurih:</strong> Tempe kedelai fermentasi alami berpadu tepung sagu renyah, diiris tipis lalu dipanggang dengan daun bawang dan kaldu nabati.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Alur Tata Cara Pemesanan Eceran &amp; Grosir (5 Langkah)</summary>
+        <ol>
+          <li><strong>Memilih Produk &amp; Varian:</strong> Tentukan varian bumbu dan kemasan dari galeri atau tabel harga, lalu klik <em>+ Tambah ke Pesanan</em>.</li>
+          <li><strong>Mengatur Kuantitas:</strong> Sesuaikan jumlah pesanan eceran maupun grosir (min. 10 pcs untuk tarif grosir) pada panel keranjang.</li>
+          <li><strong>Checkout ke WhatsApp:</strong> Lengkapi nama, nomor telepon, dan alamat pengiriman pada panel keranjang, lalu klik <em>Pesan via WhatsApp</em>.</li>
+          <li><strong>Kirim &amp; Konfirmasi Manual:</strong> Tekan tombol Kirim di aplikasi WhatsApp, kemudian konfirmasi status pengiriman saat kembali ke website.</li>
+          <li><strong>Verifikasi, Pengemasan &amp; Pengiriman:</strong> Admin memverifikasi stok serta ongkos kirim, lalu mengemas pesanan dengan bubble wrap dan kardus tebal.</li>
+        </ol>
+      </details>
+
+      <details>
+        <summary>Spesifikasi Mutu, Legalitas P-IRT &amp; Komposisi Bahan</summary>
+        <dl>
+          <dt>Rincian Komposisi Bahan Utama</dt>
+          <dd>Tepung tapioka berkualitas, daging ikan tenggiri olahan, usus ayam segar, kedelai pilihan, cabai rawit merah kering giling, bawang putih, garam beryodium, penyedap rasa alami, minyak kelapa sawit bermutu, dan daun jeruk purut.</dd>
+
+          <dt>Sertifikasi P-IRT &amp; Jaminan Halal</dt>
+          <dd>Seluruh produk memiliki Izin Edar P-IRT resmi Dinas Kesehatan serta Sertifikasi Halal BPJPH.</dd>
+
+          <dt>Masa Simpan &amp; Ketentuan Kedaluwarsa</dt>
+          <dd>Daya tahan optimal 6 hingga 9 bulan pada suhu ruang kering (25&deg;C - 28&deg;C) dengan segel utuh dan terhindar dari sinar matahari langsung.</dd>
+
+          <dt>Skala Kepedasan &amp; Sensasi Rasa</dt>
+          <dd>Level 0 (Original Asin Gurih), Level 1 (Pedas Manis Ramah Anak), Level 3 (Pedas Sedang Daun Jeruk), hingga Level 5 (Ekstra Pedas).</dd>
+        </dl>
+      </details>
+    </section>
+
+    <!-- SECTION 5: MULTIMEDIA VIDEO & AUDIO -->
+    <section>
+      <h2>Dokumentasi Video Produk &amp; Suasana Ritel</h2>
+      <p>
+        Saksikan video ulasan produk serta dengarkan jingle resmi suasana belanja di gerai <strong>Camilan Nusantara</strong>:
+      </p>
+
+      <div class="video-box">
+        <iframe 
+          src="https://www.youtube.com/embed/qSwUGblQTk8" 
+          title="Video Dokumentasi Produk Camilan Nusantara" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+        <p class="ket-media">Video Ulasan &amp; Kemasan Camilan Nusantara</p>
+      </div>
+
+      <h3>Jingle &amp; Suasana Toko Ritel</h3>
+      <audio controls preload="metadata">
+        <source src="upload/music.mp3" type="audio/mpeg">
+        Peramban Anda tidak mendukung pemutar audio.
+        <a href="upload/music.mp3">Download musik</a>.
+      </audio>
+    </section>
+
+    <!-- ASIDE: TIPS KONSUMSI & PENYIMPANAN -->
+    <aside>
+      <h3>Petunjuk Penyimpanan untuk Menjaga Kerenyahan Maksimal</h3>
+      <p>
+        Selalu rapatkan kembali klip <em>zipper lock</em> setelah kemasan dibuka. Simpan di tempat kering, sejuk, terhindar dari sinar matahari langsung, dan jauh dari benda berbau tajam.
+      </p>
+    </aside>
+
+  </main>
+
+  <!-- TOMBOL KEMBALI KE ATAS -->
+  <button type="button" id="tombol-ke-atas" class="tombol-ke-atas" title="Kembali ke atas">&#8679;</button>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span id="tahun">2026</span> Camilan Nusantara - Ritel Camilan &amp; Makanan Ringan Kemasan. Hak Cipta Dilindungi.</p>
+    <p>Tugas Kelompok 6 Pemrograman Web - Program Studi Teknik Informatika, Universitas Islam Balitar (Unisba Blitar)</p>
+  </footer>
+
+  <!-- LIBRARY CDN NOTIFIKASI (SWEETALERT2) DENGAN FALLBACK LOKAL DI MAIN.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <!-- SCRIPT JAVASCRIPT GLOBAL -->
+  <script src="js/main.js" defer></script>
+</body>
+</html>
